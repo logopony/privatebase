@@ -1,0 +1,55 @@
+---
+const faqs = [
+  {
+    question: "What types of files can I analyze with this platform?",
+    answer: "You can analyze various file formats including PDFs, Excel files (.xlsx), CSV files, and JSON data. The platform is designed to work with any structured data format commonly used in business environments."
+  },
+  {
+    question: "Do I need technical skills to use this platform?",
+    answer: "Not at all! The platform is designed for busy professionals with zero technical background. You can simply ask questions in plain English, just like you're having a conversation, and get instant insights from your data."
+  },
+  {
+    question: "How accurate are the insights and answers?",
+    answer: "Our platform reduces hallucinations by 65% compared to traditional AI solutions, ensuring highly accurate insights. You can trust the analysis for making important business decisions while maintaining the ability to verify the source data."
+  },
+  {
+    question: "Can I share insights with my team?",
+    answer: "Yes! The platform makes it easy to share insights with your team in simple English. You can generate shareable reports instantly, making collaboration seamless and ensuring everyone has access to the same data-driven insights."
+  },
+  {
+    question: "How quickly can I get answers from my data?",
+    answer: "The platform processes and analyzes your data in approximately 3 seconds, providing near-instant answers to your questions. This means you can get valuable insights faster than opening Excel, making it perfect for quick decision-making."
+  }
+];
+---
+
+<div class="py-20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      <p class="text-xl text-gray-400">
+        Everything you need to know about chatting with your data
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      {faqs.map(({ question, answer }) => (
+        <div class="bg-white/5 rounded-xl border border-primary/10 overflow-hidden hover:border-primary/30 transition-colors">
+          <details class="group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold pr-4">{question}</h3>
+              <span class="flex-shrink-0 ml-1.5 p-1.5 text-primary bg-primary/10 rounded-lg group-open:rotate-180 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-gray-400">
+              {answer}
+            </div>
+          </details>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

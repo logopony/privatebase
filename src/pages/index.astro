@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+import UploadForm from '../components/UploadForm.astro';
+import Metrics from '../components/Metrics.astro';
+import FeatureBlock from '../components/FeatureBlock.astro';
+import CompanyLogos from '../components/CompanyLogos.astro';
+import ReviewBlock from '../components/ReviewBlock.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Chat with Data - Upload and Chat with Your PDFs">
+  <main class="min-h-screen bg-gradient-to-b from-[#13151a] to-[#1a1c23] text-white">
+    <Metrics />
+    
+    <div class="max-w-6xl mx-auto px-4 py-20">
+      <div class="text-center mb-16">
+        <h1 class="text-6xl font-bold mb-6">
+          Chat with your <span class="bg-primary px-4 py-2 rounded-lg">Data</span>
+        </h1>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+          Experience the future of document analysis. Our AI-powered platform turns your PDFs into interactive conversations, making research and learning effortless.
+        </p>
+      </div>
+
+      <UploadForm />
+
+      <CompanyLogos />
+      <ReviewBlock />
+
+      <!-- Features Section -->
+      <div class="mt-32">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Tailored for Every Need</h2>
+          <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+            Powerful insights for every role, making data analysis accessible to everyone.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Sales & Marketing -->
+          <div class="bg-white/5 rounded-xl p-8 border border-primary/10 hover:border-primary/30 transition-colors">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="bg-primary/10 p-3 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold">For Sales & Marketing Teams</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="text-primary">→</span>
+                <p class="text-gray-300">Understand your sales trends without spreadsheet formulas</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary">→</span>
+                <p class="text-gray-300">Ask questions like "What were my top 5 clients last quarter?"</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary">→</span>
+                <p class="text-gray-300">Get instant visualizations of campaign performance</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Financial Planning -->
+          <div class="bg-white/5 rounded-xl p-8 border border-primary/10 hover:border-primary/30 transition-colors">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="bg-primary/10 p-3 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold">For Financial Planning</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="text-primary">→</span>
+                <p class="text-gray-300">Track your spending patterns effortlessly</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary">→</span>
+                <p class="text-gray-300">Analyze your bank statements with plain questions</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary">→</span>
+                <p class="text-gray-300">Get instant budget insights like "Where did I spend most last month?"</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Business Owners -->
+          <div class="bg-white/5 rounded-xl p-8 border border-primary/10 hover:border-primary/30 transition-colors">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="bg-primary/10 p-3 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold">For Business Owners</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="text-primary">→</span>
+                <p class="text-gray-300">Understand your business health without being a data expert</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary">→</span>
+                <p class="text-gray-300">Ask questions like "Show me my revenue growth since January"</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary">→</span>
+                <p class="text-gray-300">Get clear answers about inventory, costs, and profits</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Insights Hub -->
+          <div class="bg-white/5 rounded-xl p-8 border border-primary/10 hover:border-primary/30 transition-colors">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="bg-primary/10 p-3 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold">Quick Insights Hub</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="text-primary">→</span>
+                <p class="text-gray-300">Drop in any spreadsheet or report</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary">→</span>
+                <p class="text-gray-300">Get answers in seconds, no technical skills needed</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary">→</span>
+                <p class="text-gray-300">Share insights with your team in simple English</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alternating Feature Blocks -->
+      <div class="mt-32">
+        <FeatureBlock
+          title="INSTANT ANSWERS FROM ANY DATA"
+          description="Talk to your data in plain English. Upload any spreadsheet and ask natural questions like 'What's my best-selling product?' Get instant visualizations and share clear insights with your team—no technical skills needed. Data-driven decisions, simplified."
+        />
+        
+        <FeatureBlock
+          title="YOUR PERSONAL DATA ANALYST"
+          description="Your pocket data expert, always ready. Ask follow-up questions naturally and get jargon-free explanations that make sense. Uncover hidden trends and patterns you'd normally miss, making complex data crystal clear."
+          isReversed={true}
+        />
+        
+        <FeatureBlock
+          title="SMART WORKSPACE FOR YOUR DATA"
+          description="One powerful hub for all your business insights. Connect your Excel files, CSVs, and bank statements in seconds. Save frequent questions and generate shareable reports instantly. Your data, organized and actionable."
+        />
+        
+        <FeatureBlock
+          title="BUILT FOR BUSY PROFESSIONALS"
+          description="Stop wrestling with pivot tables. Get answers faster than opening Excel, perfect for sales, marketing, finance, and small business owners. Zero technical background required—just ask and receive."
+          isReversed={true}
+        />
+      </div>
+
+      <FAQ />
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  h1 {
+    line-height: 1.2;
+  }
+</style>
