@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ChatInterface from '../../components/ChatInterface.astro';
+import AppUpload from '../../components/AppUpload.astro';
+---
+
+<Layout title="Chat with Data - App">
+  <div class="min-h-screen bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <div id="uploadSection" class="max-w-2xl mx-auto">
+        <AppUpload />
+      </div>
+      
+      <div id="chatSection" class="hidden">
+        <ChatInterface />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Toggle between upload and chat sections
+  const uploadForm = document.querySelector('form');
+  const uploadSection = document.getElementById('uploadSection');
+  const chatSection = document.getElementById('chatSection');
+
+  uploadForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    uploadSection?.classList.add('hidden');
+    chatSection?.classList.remove('hidden');
+  });
+</script>

@@ -1,0 +1,22 @@
+---
+---
+<form class="w-full bg-white rounded-2xl border-2 border-dashed border-primary p-8 hover:border-primary/70 transition-colors">
+  <div class="flex flex-col items-center justify-center h-48 cursor-pointer">
+    <div class="mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+      </svg>
+    </div>
+    <p class="text-lg text-gray-900 font-medium mb-2">Upload your file to start chatting</p>
+    <div class="flex gap-2 mb-4">
+      {['.pdf', '.xlsx', '.csv', '.json'].map((format) => (
+        <span class="px-3 py-1 rounded-full text-sm bg-primary/10 text-primary border border-primary/20">
+          {format}
+        </span>
+      ))}
+    </div>
+    <button type="submit" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+      Upload and Analyze
+    </button>
+  </div>
+</form>

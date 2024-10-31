@@ -9,10 +9,10 @@ import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Chat with Data - Upload Your Files and Ask Questions">
+<Layout title="Chat with Data - Upload and Chat with Your PDFs">
   <main class="min-h-screen bg-gradient-to-b from-gray-50 to-white">
     <Metrics />
-
+    
     <div class="max-w-6xl mx-auto px-4 py-20">
       <div class="text-center mb-16">
         <h1 class="text-6xl font-bold mb-6 text-dark">
@@ -26,6 +26,7 @@ import Footer from '../components/Footer.astro';
       <UploadForm />
 
       <CompanyLogos />
+      <ReviewBlock />
 
       <!-- Features Section -->
       <div class="mt-32">
@@ -143,26 +144,24 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
 
-      <ReviewBlock />
-
       <!-- Alternating Feature Blocks -->
       <div class="mt-32">
         <FeatureBlock
           title="INSTANT ANSWERS FROM ANY DATA"
           description="Talk to your data in plain English. Upload any spreadsheet and ask natural questions like 'What's my best-selling product?' Get instant visualizations and share clear insights with your team—no technical skills needed. Data-driven decisions, simplified."
         />
-
+        
         <FeatureBlock
           title="YOUR PERSONAL DATA ANALYST"
           description="Your pocket data expert, always ready. Ask follow-up questions naturally and get jargon-free explanations that make sense. Uncover hidden trends and patterns you'd normally miss, making complex data crystal clear."
           isReversed={true}
         />
-
+        
         <FeatureBlock
           title="SMART WORKSPACE FOR YOUR DATA"
           description="One powerful hub for all your business insights. Connect your Excel files, CSVs, and bank statements in seconds. Save frequent questions and generate shareable reports instantly. Your data, organized and actionable."
         />
-
+        
         <FeatureBlock
           title="BUILT FOR BUSY PROFESSIONALS"
           description="Stop wrestling with pivot tables. Get answers faster than opening Excel, perfect for sales, marketing, finance, and small business owners. Zero technical background required—just ask and receive."

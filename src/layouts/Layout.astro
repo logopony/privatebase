@@ -19,7 +19,7 @@ const { title } = Astro.props;
 	<body>
 		<div class="relative">
 			<!-- Blob Container -->
-			<div class="absolute w-full pointer-events-none">
+			<div class="absolute w-full pointer-events-none" style="top: 150px">
 				<svg class="w-full h-[1200px]" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
 					<defs>
 						<radialGradient id="gradient1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
@@ -27,7 +27,7 @@ const { title } = Astro.props;
 							<stop offset="100%" stop-color="#4ead87" stop-opacity="0" />
 						</radialGradient>
 					</defs>
-
+					
 					<!-- Green blob - centered with form -->
 					<circle cx="400" cy="400" r="300" fill="url(#gradient1)">
 						<animate

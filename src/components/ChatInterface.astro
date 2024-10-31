@@ -1,0 +1,52 @@
+---
+---
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <!-- Data Preview Section -->
+  <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+    <h2 class="text-xl font-semibold mb-4">Document Content</h2>
+    <div class="prose max-w-none">
+      <p class="text-gray-600">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <p class="text-gray-600 mt-4">
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </div>
+
+  <!-- Chat Interface Section -->
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-200 flex flex-col h-[600px]">
+    <div class="p-4 border-b border-gray-200">
+      <h2 class="text-xl font-semibold">Chat with your Data</h2>
+    </div>
+
+    <!-- Messages Container -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-4">
+      <!-- AI Message -->
+      <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-3 max-w-[80%]">
+          <p class="text-gray-800">Hello! I've analyzed your document. What would you like to know about it?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="p-4 border-t border-gray-200">
+      <form class="flex gap-2">
+        <input
+          type="text"
+          placeholder="Ask a question about your document..."
+          class="flex-1 px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50"
+        />
+        <button type="submit" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
