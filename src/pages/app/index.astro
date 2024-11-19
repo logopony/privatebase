@@ -10,7 +10,7 @@ import AppUpload from '../../components/AppUpload.astro';
       <div id="uploadSection" class="max-w-2xl mx-auto">
         <AppUpload />
       </div>
-      
+
       <div id="chatSection" class="hidden">
         <ChatInterface />
       </div>
@@ -19,14 +19,87 @@ import AppUpload from '../../components/AppUpload.astro';
 </Layout>
 
 <script>
-  // Toggle between upload and chat sections
-  const uploadForm = document.querySelector('form');
-  const uploadSection = document.getElementById('uploadSection');
-  const chatSection = document.getElementById('chatSection');
+  // Define API endpoint from environment variable
+  const API_ENDPOINT = import.meta.env.PUBLIC_API_URL;
 
-  uploadForm?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    uploadSection?.classList.add('hidden');
-    chatSection?.classList.remove('hidden');
+  function createChatMessage(data) {
+    const chatContainer = document.querySelector('.chat-messages');
+    if (!chatContainer) return;
+
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'chat-message bot-message bg-gray-100 p-4 rounded-lg mb-4';
+
+    // Create the message content
+    const content = `
+      <h3 class="font-bold text-lg mb-2">📄 ${data.filename}</h3>
+
+      <div class="metadata mb-4">
+        <p class="text-sm text-gray-600">Type: ${data.file_type.toUpperCase()}</p>
+        ${Object.entries(data.metadata)
+          .filter(([_, value]) => value) // Only show non-empty metadata
+          .map(([key, value]) => `
+            <p class="text-sm text-gray-600">${key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}: ${value}</p>
+          `).join('')}
+      </div>
+
+      <div class="pages">
+        ${data.data.map(page => `
+          <div class="page mb-4">
+            <h4 class="font-semibold mb-2">Page ${page.page}</h4>
+            <p class="text-sm whitespace-pre-wrap">${page.content}</p>
+          </div>
+        `).join('')}
+      </div>
+    `;
+
+    messageDiv.innerHTML = content;
+    chatContainer.appendChild(messageDiv);
+
+    // Scroll to the bottom of the chat
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }
+
+  // Wait for DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const uploadForm = document.querySelector('form');
+    const uploadSection = document.getElementById('uploadSection');
+    const chatSection = document.getElementById('chatSection');
+    const fileInput = document.querySelector('input[type="file"]');
+
+    // Handle file selection
+    fileInput?.addEventListener('change', async (e) => {
+      const input = e.target as HTMLInputElement;
+      if (input.files && input.files[0]) {
+        const formData = new FormData();
+        formData.append('file', input.files[0]); // 'file' must match the FastAPI parameter name
+
+        try {
+          const response = await fetch(`${API_ENDPOINT}/parse/`, {
+            method: 'POST',
+            body: formData,
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          console.log('Upload successful:', data);
+
+          // Show chat section and create message
+          uploadSection?.classList.add('hidden');
+          chatSection?.classList.remove('hidden');
+          createChatMessage(data);
+        } catch (error) {
+          console.error('Upload failed:', error);
+          alert('Failed to upload file. Please try again.');
+        }
+      }
+    });
+
+    // Optional: Also keep the form submit handler for button clicks
+    uploadForm?.addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent default form submission
+    });
   });
 </script>

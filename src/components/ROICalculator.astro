@@ -1,0 +1,98 @@
+---
+---
+<div class="mt-40 mb-24 p-8 bg-white rounded-2xl border border-gray-100 shadow-sm">
+  <div class="text-center mb-12">
+    <h2 class="text-2xl font-semibold text-gray-900">Calculate Your Savings</h2>
+    <p class="text-gray-600">See how much time and money you could save</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Employee Count Input -->
+    <div class="space-y-4">
+      <h3 class="font-medium text-gray-900">Number of Employees</h3>
+      <div class="space-y-4">
+        <input
+          type="range"
+          min="5"
+          max="100"
+          value="20"
+          class="w-full accent-black"
+          id="employeeSlider"
+        >
+        <div class="flex justify-between text-sm text-gray-600">
+          <span>5</span>
+          <span id="employeeCount">20</span>
+          <span>100</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Time Savings -->
+    <div class="space-y-4">
+      <h3 class="font-medium text-gray-900">Monthly Time Saved</h3>
+      <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+        <div>
+          <p class="text-sm text-gray-600">Hours saved per month</p>
+          <p class="text-2xl font-bold" id="timeSaved">144hrs</p>
+        </div>
+        <span class="text-2xl">⏱️</span>
+      </div>
+    </div>
+
+    <!-- Cost Savings -->
+    <div class="space-y-4">
+      <h3 class="font-medium text-gray-900">Monthly Cost Savings</h3>
+      <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+        <div>
+          <p class="text-sm text-gray-600">At $50/hour</p>
+          <p class="text-2xl font-bold" id="costSaved">$7,200</p>
+        </div>
+        <span class="text-2xl">💰</span>
+      </div>
+    </div>
+
+    <!-- Annual Savings -->
+    <div class="space-y-4">
+      <h3 class="font-medium text-gray-900">Annual Savings</h3>
+      <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+        <div>
+          <p class="text-sm text-gray-600">Projected yearly savings</p>
+          <p class="text-2xl font-bold" id="annualSaved">$86,400</p>
+        </div>
+        <span class="text-2xl">📈</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-8 text-center">
+    <a href="/calculator" class="text-sm text-gray-600 hover:text-black">
+      Calculate your specific savings →
+    </a>
+  </div>
+</div>
+
+<script>
+  const employeeSlider = document.getElementById('employeeSlider');
+  const employeeCount = document.getElementById('employeeCount');
+  const timeSaved = document.getElementById('timeSaved');
+  const costSaved = document.getElementById('costSaved');
+  const annualSaved = document.getElementById('annualSaved');
+
+  function updateCalculations() {
+    const employees = parseInt(employeeSlider.value);
+    const hoursPerWeek = employees * 1.8 * 5;
+    const hoursPerMonth = hoursPerWeek * 4;
+    const monthlyCost = hoursPerMonth * 50; // $50 per hour
+    const annualCost = monthlyCost * 12;
+
+    employeeCount.textContent = employees;
+    timeSaved.textContent = `${Math.round(hoursPerMonth)}hrs`;
+    costSaved.textContent = `$${monthlyCost.toLocaleString()}`;
+    annualSaved.textContent = `$${annualCost.toLocaleString()}`;
+  }
+
+  employeeSlider.addEventListener('input', updateCalculations);
+
+  // Initial calculation
+  updateCalculations();
+</script>

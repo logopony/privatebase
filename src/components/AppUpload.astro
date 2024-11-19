@@ -15,8 +15,11 @@
         </span>
       ))}
     </div>
-    <button type="submit" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
-      Upload and Analyze
-    </button>
+    <form enctype="multipart/form-data">
+      <input type="file" name="file" accept=".pdf,.csv,.xlsx,.txt" />
+      <button type="submit" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+        Upload and Analyze
+      </button>
+    </form>
   </div>
 </form>

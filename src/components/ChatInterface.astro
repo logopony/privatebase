@@ -6,10 +6,7 @@
     <h2 class="text-xl font-semibold mb-4">Document Content</h2>
     <div class="prose max-w-none">
       <p class="text-gray-600">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <p class="text-gray-600 mt-4">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Your document content will appear here after upload.
       </p>
     </div>
   </div>
@@ -21,8 +18,8 @@
     </div>
 
     <!-- Messages Container -->
-    <div class="flex-1 overflow-y-auto p-4 space-y-4">
-      <!-- AI Message -->
+    <div class="chat-messages flex-1 overflow-y-auto p-4 space-y-4">
+      <!-- Initial AI Message -->
       <div class="flex items-start gap-3">
         <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -30,9 +27,10 @@
           </svg>
         </div>
         <div class="bg-gray-100 rounded-lg p-3 max-w-[80%]">
-          <p class="text-gray-800">Hello! I've analyzed your document. What would you like to know about it?</p>
+          <p class="text-gray-800">Hello! Please upload a document to begin the analysis.</p>
         </div>
       </div>
+      <!-- Additional messages will be inserted here by JavaScript -->
     </div>
 
     <!-- Input Area -->
@@ -50,3 +48,38 @@
     </div>
   </div>
 </div>
+
+<style>
+  .chat-messages {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+  }
+
+  .chat-messages::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .chat-messages::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.5);
+    border-radius: 3px;
+  }
+
+  .chat-message {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
